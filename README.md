@@ -21,6 +21,8 @@
 
 This script, is now released. It is no longer in beta state. This project originally started as a vibe coded project to see what we could get away with. It quickly turned into only being an outline, as A.I is too frustrating to deal with after more than 80 lines of code. The rest, is completely scripted by tonekneeo, and myself.
 
+### Lua Update
+
 The initial .lua files have been added if you want to start using them.
 To get Noctalia Shell to work with lua follow the guide here: 
 https://github.com/ycf-anon/hyprland-lua-noctalia-shell-fixes
