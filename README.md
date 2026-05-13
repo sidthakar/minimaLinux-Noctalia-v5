@@ -31,6 +31,8 @@ After running the script replace the .conf files with the new .lua files (you ca
 
 Until Noctalia is completely updated you will have to manually change the color codes in the noctalia-colors.lua file in the ~/.config/hypr/noctalia to match your color-scheme for window borders.
 
+NVIDIA Users: On line 32 of the startup.lua change local enable_nvidia_optional = false to local enable_nvidia_optional = true
+
 ### What this does
 
 This script turns a fresh Arch + Hyprland setup into the minimaLinux desktop by installing required packages, dropping useless ones and adding preconfigured streamlined dotfiles.
