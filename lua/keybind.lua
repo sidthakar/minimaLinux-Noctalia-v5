@@ -5,6 +5,45 @@ local EDITOR = "code"
 local EXPLORER = "thunar"
 local BROWSER = scrPath .. "/browser-launcher.sh"
 
+local MOVE_STEP = 30
+
+-- Direction helpers
+local directions = {
+    left  = { x = -MOVE_STEP, y = 0 },
+    right = { x = MOVE_STEP,  y = 0 },
+    up    = { x = 0, y = -MOVE_STEP },
+    down  = { x = 0, y = MOVE_STEP  },
+}
+
+-- Helpers
+local function move_or_swap(dir)
+    return function()
+        local w = hl.get_active_window()
+
+        if w and w.floating then
+            hl.dispatch(hl.dsp.window.move({
+                x = directions[dir].x,
+                y = directions[dir].y,
+                relative = true,
+            }))
+        else
+            hl.dispatch(hl.dsp.window.move({
+                direction = dir,
+            }))
+        end
+    end
+end
+
+local function resize_window(dir)
+    return function()
+        hl.dispatch(hl.dsp.window.resize({
+            x = directions[dir].x,
+            y = directions[dir].y,
+            relative = true,
+        }))
+    end
+end
+
 -- Application launchers
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(TERMINAL))
 hl.bind(mainMod .. " + E",      hl.dsp.exec_cmd(EXPLORER))
@@ -37,16 +76,14 @@ hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 hl.bind("ALT + tab", hl.dsp.window.cycle_next())
 
 -- Resize active window (keyboard)
-hl.bind(mainMod .. " + SHIFT + right", function() hl.exec_cmd("hyprctl dispatch resizeactive 30 0") end)
-hl.bind(mainMod .. " + SHIFT + left",  function() hl.exec_cmd("hyprctl dispatch resizeactive -30 0") end)
-hl.bind(mainMod .. " + SHIFT + up",    function() hl.exec_cmd("hyprctl dispatch resizeactive 0 -30") end)
-hl.bind(mainMod .. " + SHIFT + down",  function() hl.exec_cmd("hyprctl dispatch resizeactive 0 30") end)
+for dir, _ in pairs(directions) do
+    hl.bind(mainMod .. " + SHIFT + " .. dir, resize_window(dir))
+end
 
 -- Move active window (float) or swap tiled
-hl.bind(mainMod .. " + SHIFT + CTRL + left",  function() hl.exec_cmd("bash -c 'grep -q true <<< $(hyprctl activewindow -j | jq -r .floating) && hyprctl dispatch moveactive -30 0 || hyprctl dispatch movewindow l'") end)
-hl.bind(mainMod .. " + SHIFT + CTRL + right", function() hl.exec_cmd("bash -c 'grep -q true <<< $(hyprctl activewindow -j | jq -r .floating) && hyprctl dispatch moveactive 30 0 || hyprctl dispatch movewindow r'") end)
-hl.bind(mainMod .. " + SHIFT + CTRL + up",    function() hl.exec_cmd("bash -c 'grep -q true <<< $(hyprctl activewindow -j | jq -r .floating) && hyprctl dispatch moveactive 0 -30 || hyprctl dispatch movewindow u'") end)
-hl.bind(mainMod .. " + SHIFT + CTRL + down",  function() hl.exec_cmd("bash -c 'grep -q true <<< $(hyprctl activewindow -j | jq -r .floating) && hyprctl dispatch moveactive 0 30 || hyprctl dispatch movewindow d'") end)
+for dir, _ in pairs(directions) do
+    hl.bind(mainMod .. " + SHIFT + CTRL + " .. dir, move_or_swap(dir))
+end
 
 -- Screenshots
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("HYPRSHOT_DIR=~/Pictures/Screenshots hyprshot -m window"))
