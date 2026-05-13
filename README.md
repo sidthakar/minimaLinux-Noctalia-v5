@@ -23,7 +23,8 @@ This script, is now released. It is no longer in beta state. This project origin
 
 ### Lua Update
 
-The initial .lua files have been added if you want to start using them.
+The initial .lua files have been added if you want to start using them. For now you need to manually replace your .conf files with the files in the new lua folder.
+
 To get Noctalia Shell to work with lua follow the guide here: 
 https://github.com/ycf-anon/hyprland-lua-noctalia-shell-fixes
 
