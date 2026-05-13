@@ -25,10 +25,9 @@ This script, is now released. It is no longer in beta state. This project origin
 
 The initial .lua files have been added if you want to start using them. For now you need to manually replace your .conf files with the files in the new lua folder.
 
-To get Noctalia Shell to work with lua follow the guide here: 
-https://github.com/ycf-anon/hyprland-lua-noctalia-shell-fixes
+Make sure you are on Noctalia-shell version 4.7.7 before attempting to use the lua files.
 
-After running the script replace the .conf files with the new .lua files (you can leave the hypridle.conf), follow the steps in the git above, reboot, enjoy.
+After running the script replace the .conf files with the new .lua files (you can leave the hypridle.conf), reboot, enjoy.
 
 Until Noctalia is completely updated you will have to manually change the color codes in the noctalia-colors.lua file in the ~/.config/hypr/noctalia to match your color-scheme for window borders.
 
