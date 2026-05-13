@@ -25,6 +25,8 @@ The initial .lua files have been added if you want to start using them.
 To get Noctalia Shell to work with lua follow the guide here: 
 https://github.com/ycf-anon/hyprland-lua-noctalia-shell-fixes
 
+Until Noctalia is completely updated you will have to manually change the color codes in the noctalia-colors.lua file in the ~/.config/hypr/noctalia to match your color-scheme for window borders.
+
 ### What this does
 
 This script turns a fresh Arch + Hyprland setup into the minimaLinux desktop by installing required packages, dropping useless ones and adding preconfigured streamlined dotfiles.
