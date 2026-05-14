@@ -49,7 +49,7 @@ The primary application bar (`noctalia-shell`) is based on the exceptional work 
 
 ### Community
 
-Join the Discord server: [HERE](https://discord.gg/5T5hzfqn)
+Join the Discord server: [HERE](https://discord.gg/rQTabZmYHh)
 
 
 ## 📦 What's Included?
