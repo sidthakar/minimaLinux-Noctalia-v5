@@ -45,11 +45,10 @@ local function resize_window(dir)
 end
 
 -- Application launchers
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(TERMINAL))
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(TERMINAL))
 hl.bind(mainMod .. " + E",      hl.dsp.exec_cmd(EXPLORER))
 hl.bind(mainMod .. " + C",      hl.dsp.exec_cmd(EDITOR))
 hl.bind(mainMod .. " + B",      hl.dsp.exec_cmd(BROWSER))
-hl.bind(mainMod .. " + D",      hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind(mainMod .. " + R",      hl.dsp.exec_cmd("qs -c noctalia-shell ipc call launcher toggle"))
 hl.bind(mainMod .. " + L",      hl.dsp.exec_cmd("qs -c noctalia-shell ipc call lockScreen lock"))
 hl.bind(mainMod .. " + T",      hl.dsp.exec_cmd("qs -c noctalia-shell ipc call settings toggle"))
