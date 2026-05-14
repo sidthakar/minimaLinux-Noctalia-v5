@@ -27,7 +27,7 @@ The initial .lua files have been added if you want to start using them. For now 
 
 Make sure you are on Noctalia-shell version 4.7.7 before attempting to use the lua files.
 
-After running the script replace the .conf files with the new .lua files (you can leave the hypridle.conf), reboot, enjoy.
+After running the script replace the .conf files with the new .lua files, reboot, enjoy.
 
 Until Noctalia is completely updated you will have to manually change the color codes in the noctalia-colors.lua file in the ~/.config/hypr/noctalia to match your color-scheme for window borders.
 
@@ -46,6 +46,10 @@ Once in the system open ~/.config/hypr/startup.conf and uncomment the Nvidia sec
 The primary application bar (`noctalia-shell`) is based on the exceptional work by **Noctalia**. All credit for the bar's design and functionality goes to them:
 
 > [**noctalia-dev/noctalia-shell**](https://github.com/noctalia-dev/noctalia-shell)
+
+### Community
+
+Join the Discord server: [discord.gg/5T5hzfqn](https://discord.gg/5T5hzfqn)
 
 
 ## 📦 What's Included?
