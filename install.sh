@@ -383,7 +383,8 @@ PACKAGES=(
     gst-plugins-good          # Gstreamer Plugins 
     gst-plugins-ugly          # Gstreamer Plugins
     gst-libav                 # Gstreamer Plugins
-    qt6-websockets            # Websocket 
+    qt6-websockets            # Websocket
+    os-prober                 # Os prober for Grub
 )
 
 # Audio stack is selected at runtime.
