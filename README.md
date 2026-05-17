@@ -33,6 +33,8 @@ Until Noctalia is completely updated you will have to manually change the color 
 
 NVIDIA Users: On line 32 of the startup.lua change local enable_nvidia_optional = false to local enable_nvidia_optional = true
 
+For the browser script to work you will have to set it as executable in the ~/.config/hypr/Scripts folder. 
+
 ### What this does
 
 This script turns a fresh Arch + Hyprland setup into the minimaLinux desktop by installing required packages, dropping useless ones and adding preconfigured streamlined dotfiles.
