@@ -310,7 +310,6 @@ PACKAGES=(
     hypridle                  # Turns off screen after set time
     pavucontrol               # PulseAudio/PipeWire volume control
     playerctl                 # Media player controller
-    wlsunset                  # Nightlight for quickshell
     fish                      # Shell
     fastfetch                 # System Info Display
     satty                     # Screenshot annotation tool
@@ -1238,7 +1237,7 @@ echo "Proceeding with post-install configuration..."
 echo "--------------------------------------------------------"
 
 # Refresh and upgrade system packages before AUR installs
-echo "Updating system packages before installing noctalia-shell and noctalia-qs..."
+echo "Updating system packages before installing noctalia-git and noctalia-qs..."
 sudo pacman -Syu --noconfirm
 
 if [ $? -ne 0 ]; then
@@ -1246,12 +1245,12 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Install noctalia-shell and noctaliia-qs via yay
-echo "Installing noctalia-shell and noctaliia-qs via yay..."
-sudo -u "$ACTUAL_USER" yay -S --noconfirm noctalia-shell noctalia-qs
+# Install noctalia-git via yay
+echo "Installing noctalia-git via yay..."
+sudo -u "$ACTUAL_USER" yay -S --noconfirm noctalia-git
 
 if [ $? -ne 0 ]; then
-    echo "Warning: Failed to install noctalia-shell and/or noctaliia-qs."
+    echo "Warning: Failed to install noctalia-git."
 fi
 
 # Browser installation
