@@ -16,7 +16,7 @@ local nvidia_optional = {
 }
 
 local exec_once = {
-    "qs -c noctalia-shell",
+    "noctalia",
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1",
     "gnome-keyring-daemon --start --components=secrets",
     "hypridle",
